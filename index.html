@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Developing data products assignment</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Developing data products assignment">
+  <meta name="author" content="Najma Rajah">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Developing data products assignment</h1>
+    <h2>Week 4</h2>
+    <p>Najma Rajah<br/>Author of Game, Set and Stats Blog</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Introduction</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The assignment for Week 4 of the developing data products specialisation requires the student to develop and app. This presentation provides the following information:</p>
+
+<ol>
+<li>A description of the data used within the app</li>
+<li>A description of the app which can be used to predict a tennis player&#39;s weight based on information on their height, including instructions on how to use the app</li>
+<li>An example of the output from the app</li>
+<li>Benefits of the app</li>
+</ol>
+
+<p>-I have developed an app, based on data published by the ATP on tennis players&#39; weights and heights, which can be used to predict a tennis player&#39;s weight. The data was obtained from <a href="https://www.atptour.com/en/players">https://www.atptour.com/en/players</a></p>
+
+<ul>
+<li>I use this data to predict the weight of a player based on their height</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>A description of the data</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>This app draws on data obtained from the Association of Professional Tennis players&#39; website. The data set comprises the heights and weights of the top 100 male players in the world during the week commencing  </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>A description of the app</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The app can be used to predict a tennis player&#39;s height based on their weight. The side panel of the app allows the user to input the weight of the tennis player in cms. </p>
+
+<p>The output of the app is shown in the main panel. It comprises two elements.</p>
+
+<p>First there is a scatter plot which shows the relationship between the height and the weight of the top 100 male tennis players in the world. </p>
+
+<pre><code class="plot">
+chart&lt;-plot(ATPsize$Heightcms, ATPsize$Weightkg, xlab = &quot;Height in cms&quot;, 
+                     ylab = &quot;Weight in Kgs&quot;, pch = 16,
+                     xlim = c(170, 215), ylim = c(60, 110))
+chart
+</code></pre>
+
+<p>The app then deploys the lm function to predict the weight of the tennis player </p>
+
+<p>The height is measured in cms
+The weight is measured in kg</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Introduction'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='A description of the data'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='A description of the app'>
+         3
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
