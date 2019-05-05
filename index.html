@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Developing data products assignment</title>
+  <title>Developing Data Products Assigment</title>
   <meta charset="utf-8">
-  <meta name="description" content="Developing data products assignment">
+  <meta name="description" content="Developing Data Products Assigment">
   <meta name="author" content="Najma Rajah">
   <meta name="generator" content="slidify" />
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -32,9 +32,9 @@
     <!-- LOGO SLIDE -->
         <slide class="title-slide segue nobackground">
   <hgroup class="auto-fadein">
-    <h1>Developing data products assignment</h1>
-    <h2>Week 4</h2>
-    <p>Najma Rajah<br/>Author of Game, Set and Stats Blog</p>
+    <h1>Developing Data Products Assigment</h1>
+    <h2>My Tennis App</h2>
+    <p>Najma Rajah<br/>Author of Game, Set and Stats</p>
   </hgroup>
   <article></article>  
 </slide>
@@ -46,14 +46,13 @@
     <h2>Introduction</h2>
   </hgroup>
   <article data-timings="">
-    <p>The assignment for Week 4 of the developing data products specialisation requires the student to develop and app</p>
+    <p>The assignment for Week 4 of the developing data products specialisation requires the student to develop and app. This presentation provides the following information:</p>
 
-<p>-I have developed an app based on data published by the ATP on tennis players&#39; weights and heights</p>
-
-<ul>
-<li>I use this data to predict the weight of a player based on their height</li>
-<li>Use an empty line followed by three dashes to separate slides!</li>
-</ul>
+<ol>
+<li>A description of the data used within the app</li>
+<li>A description of the app which can be used to predict a tennis player&#39;s weight based on information on their height, including instructions on how to use the app and its benefits</li>
+<li>An example of the output from the app</li>
+</ol>
 
   </article>
   <!-- Presenter Notes -->
@@ -64,8 +63,58 @@
     <h2>A description of the data</h2>
   </hgroup>
   <article data-timings="">
-    <p>The height is measured in cms
-The weight is measured in kg</p>
+    <p>This app draws on data obtained from the Association of Professional Tennis players&#39; website. The data set comprises the heights (in cms) and weights (in Kgs) of the top 100 male players in the world during the week commencing 1 Jan 2019. The data set also includes a wide range of other information including the name of the player, their ranking position, their age and their BMI.</p>
+
+<pre><code class="r">ATPsize&lt;-read.csv(&quot;~/myTennisApp/ATP data.csv&quot;, header=TRUE, stringsAsFactors = FALSE)
+summary(ATPsize$Heightcms)
+</code></pre>
+
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   170.0   183.0   188.0   188.2   193.0   211.0
+</code></pre>
+
+<pre><code class="r">summary(ATPsize$Weightkg)
+</code></pre>
+
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   64.00   77.00   81.50   82.05   86.25  108.00
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>A description of the app</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The app can be used to predict a tennis player&#39;s height based on their weight. The side panel of the app allows the user to input the weight of the tennis player in cms. </p>
+
+<p>The output of the app is shown in the main panel. It comprises two elements.</p>
+
+<p>First there is a scatter plot which shows the relationship between the height and the weight of the top 100 male tennis players in the world. </p>
+
+<p>Then the app predicts the weight given the weight that was selected by using the slider, based on the lm function. An interactive version of the app is available at <a href="https://najmarajah.shinyapps.io/tennis/">https://najmarajah.shinyapps.io/tennis/</a> and the R code to build the app is available at <a href="https://github.com/rajahn01/Developing-data-products-assignment">https://github.com/rajahn01/Developing-data-products-assignment</a></p>
+
+<p>The app can be used to show what the ideal weight for a tennis player of a certain height should be. It can also be used to identify whether a male of a certain weight and height is likely to be successful in the sport at the highest level. </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Scatter plot showing the relationship between a player&#39;s weight and their height.</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">model1&lt;-lm(Weightkg~Heightcms, data=ATPsize)
+chart&lt;-plot(ATPsize$Heightcms, ATPsize$Weightkg, xlab = &quot;Height in cms&quot;, 
+                     ylab = &quot;Weight in Kgs&quot;, main=&quot;Male tennis players&#39; weights &amp; heights&quot;, pch = 16, xlim = c(170, 215), ylim = c(60, 110))
+abline(model1, col=&quot;red&quot;,lwd=2)
+</code></pre>
+
+<h2><img src="figure/unnamed-chunk-2-1.png" alt="plot of chunk unnamed-chunk-2"></h2>
 
   </article>
   <!-- Presenter Notes -->
@@ -85,6 +134,18 @@ The weight is measured in kg</p>
       <a href="#" target="_self" rel='tooltip' 
         data-slide=2 title='A description of the data'>
          2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='A description of the app'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Scatter plot showing the relationship between a player&#39;s weight and their height.'>
+         4
       </a>
     </li>
   </ul>
